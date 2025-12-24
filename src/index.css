@@ -1,0 +1,21 @@
+:root {
+  --bg-primary: #0b061a;
+  --bg-secondary: #120c2e;
+  --card-bg: #1a1440;
+  --accent-purple: #7b61ff;
+  --accent-pink: #ff4fd8;
+  --text-primary: #ffffff;
+  --text-muted: #a9a9c9;
+  --gradient-main: linear-gradient(135deg, #7b61ff, #ff4fd8);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1a1440, #0b061a);
+  color: var(--text-primary);
+}
