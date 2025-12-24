@@ -19,3 +19,17 @@ body {
   background: radial-gradient(circle at top, #1a1440, #0b061a);
   color: var(--text-primary);
 }
+
+/* Hide browser scrollbar (page level) */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;            /* ⛔ removes browser scroll */
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE / Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;               /* Chrome / Safari */
+}
