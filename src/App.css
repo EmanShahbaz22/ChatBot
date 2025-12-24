@@ -2,16 +2,19 @@
 .app-container {
   min-height: 100vh;
   display: flex;
+  flex-direction: row;          /* 🔒 ALWAYS side by side */
   justify-content: center;
   align-items: center;
   gap: 60px;
   padding: 40px;
+  flex-wrap: nowrap;
 }
 
 /* Robot Section */
 .robot-section {
   max-width: 420px;
   text-align: left;
+  flex-shrink: 0;               /* prevent shrinking */
 }
 
 .robot-section img {
@@ -41,6 +44,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 /* Header */
@@ -68,13 +72,12 @@
   gap: 14px;
   overflow-y: auto;
 
-  /* Hide scrollbar but keep scroll functionality */
-  scrollbar-width: none;       /* Firefox */
-  -ms-overflow-style: none;    /* IE / Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .chat-messages::-webkit-scrollbar {
-  display: none;               /* Chrome / Safari */
+  display: none;
 }
 
 .message {
@@ -129,67 +132,59 @@
 }
 
 /* =====================
-   RESPONSIVE – SAME UI, STACKED
+   RESPONSIVE (SIDE-BY-SIDE ALWAYS)
 ===================== */
 
-/* Tablets & smaller screens */
+/* Tablets */
 @media (max-width: 1024px) {
-  .app-container {
-    flex-direction: column;
-    gap: 40px;
-    padding: 20px;
-  }
-
-  .robot-section {
-    text-align: center;
-  }
-
   .robot-section img {
-    max-width: 280px;
+    max-width: 300px;
   }
 
   .robot-section h1 {
     font-size: 26px;
   }
+
+  .chat-card {
+    width: 360px;
+    height: 680px;
+  }
 }
 
-/* Mobile screens */
+/* Mobile */
 @media (max-width: 768px) {
+  body {
+    overflow-x: auto;           /* allow horizontal scroll */
+  }
+
   .app-container {
-    flex-direction: column;
-    gap: 30px;
-    padding: 16px 12px;
+    min-width: 760px;           /* robot + chat width */
+    padding: 20px;
   }
 
   .robot-section img {
-    max-width: 220px;
+    max-width: 260px;
   }
 
   .robot-section h1 {
     font-size: 22px;
-    text-align: center;
   }
 
   .chat-card {
-    width: 100%;
-    max-width: 380px;
-    height: 600px;
-    border-radius: 24px;
+    width: 340px;
+    height: 620px;
   }
 }
 
 /* Very small phones */
 @media (max-width: 400px) {
   .robot-section img {
-    max-width: 180px;
-  }
-
-  .robot-section h1 {
-    font-size: 18px;
+    max-width: 220px;
   }
 
   .chat-card {
-    height: 540px;
+    width: 300px;
+    height: 580px;
   }
 
   .message {
