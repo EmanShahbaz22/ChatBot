@@ -3,9 +3,9 @@
 ===================== */
 
 .app-container {
-  min-height: calc(100vh - 80px); /* ⬅ fixes taskbar issue */
+  min-height: calc(100vh - 80px); 
   display: flex;
-  flex-direction: row;            /* 🔒 always side-by-side */
+  flex-direction: row;            
   justify-content: center;
   align-items: center;
   gap: 60px;
@@ -45,7 +45,7 @@
 
 .chat-card {
   width: 380px;
-  height: 660px; /* ⬅ reduced height */
+  height: 660px;
   background: rgba(26, 20, 64, 0.75);
   backdrop-filter: blur(18px);
   border-radius: 26px;
@@ -85,12 +85,12 @@
   gap: 14px;
   overflow-y: auto;
 
-  scrollbar-width: none;       /* Firefox */
-  -ms-overflow-style: none;    /* IE / Edge */
+  scrollbar-width: none;       
+  -ms-overflow-style: none;   
 }
 
 .chat-messages::-webkit-scrollbar {
-  display: none;               /* Chrome / Safari */
+  display: none;             
 }
 
 .message {
@@ -170,11 +170,11 @@
 /* Mobile */
 @media (max-width: 768px) {
   body {
-    overflow-x: hidden; /* no browser scrollbar */
+    overflow-x: hidden; 
   }
 
   .app-container {
-    transform: scale(0.9);     /* 🔥 scale instead of stacking */
+    transform: scale(0.9);     
   }
 
   .robot-section img {
